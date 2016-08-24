@@ -29,7 +29,7 @@ class BaseTestClass: XCTestCase {
         BaseTestClass.db_i += 1
         //});
         db.removeAllObjects()
-        db.encoder = {(key: String, value: AnyObject) -> NSData? in
+        db.encoder = {(key: String, value: NSObject) -> NSData? in
             do {
                 return try NSJSONSerialization.dataWithJSONObject(value, options: [])
             }
@@ -38,9 +38,9 @@ class BaseTestClass: XCTestCase {
                 return nil
             }
         }
-        db.decoder = {(key: String, data: NSData) -> AnyObject? in
+        db.decoder = {(key: String, data: NSData) -> NSObject? in
             do {
-                return try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSObject
             }
             catch let error {
                 print("Problem decoding data: \(error)")
