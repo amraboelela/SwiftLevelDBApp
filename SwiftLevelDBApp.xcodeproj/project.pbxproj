@@ -12,7 +12,12 @@
 		0C4F5EC91D6B72EA00BEE4AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4F5EC71D6B72EA00BEE4AE /* Main.storyboard */; };
 		0C4F5ECB1D6B72EA00BEE4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4F5ECA1D6B72EA00BEE4AE /* Assets.xcassets */; };
 		0C4F5ECE1D6B72EA00BEE4AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4F5ECC1D6B72EA00BEE4AE /* LaunchScreen.storyboard */; };
-		0C4F5ED91D6B72EA00BEE4AE /* SwiftLevelDBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F5ED81D6B72EA00BEE4AE /* SwiftLevelDBAppTests.swift */; };
+		0CF7F6021D6CF49F00725EFB /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7F6001D6CF49F00725EFB /* BaseTestClass.swift */; };
+		0CF7F6051D6CF61100725EFB /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */; };
+		0CF7F6061D6CF7EB00725EFB /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7F6011D6CF49F00725EFB /* MainTests.swift */; };
+		0CF7F6071D6D01C000725EFB /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */; };
+		0CF7F6091D6D01C300725EFB /* CLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7F6081D6D01C300725EFB /* CLevelDB.framework */; };
+		0CF7F60A1D6D01C900725EFB /* CLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7F6081D6D01C300725EFB /* CLevelDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,10 @@
 		0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLevelDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4F5ED81D6B72EA00BEE4AE /* SwiftLevelDBAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLevelDBAppTests.swift; sourceTree = "<group>"; };
 		0C4F5EDA1D6B72EA00BEE4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CF7F6001D6CF49F00725EFB /* BaseTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestClass.swift; sourceTree = "<group>"; };
+		0CF7F6011D6CF49F00725EFB /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
+		0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-hjjomupxthkhxzdlfepaxhwtjvzt/Build/Products/Debug-iphonesimulator/SwiftLevelDB.framework"; sourceTree = "<group>"; };
+		0CF7F6081D6D01C300725EFB /* CLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-hjjomupxthkhxzdlfepaxhwtjvzt/Build/Products/Debug-iphonesimulator/CLevelDB.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF7F6091D6D01C300725EFB /* CLevelDB.framework in Frameworks */,
+				0CF7F6071D6D01C000725EFB /* SwiftLevelDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF7F60A1D6D01C900725EFB /* CLevelDB.framework in Frameworks */,
+				0CF7F6051D6CF61100725EFB /* SwiftLevelDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 		0C4F5EB71D6B72EA00BEE4AE = {
 			isa = PBXGroup;
 			children = (
+				0CF7F60B1D6D01E400725EFB /* Frameworks */,
 				0C4F5EC21D6B72EA00BEE4AE /* SwiftLevelDBApp */,
 				0C4F5ED71D6B72EA00BEE4AE /* SwiftLevelDBAppTests */,
 				0C4F5EC11D6B72EA00BEE4AE /* Products */,
@@ -90,10 +104,21 @@
 		0C4F5ED71D6B72EA00BEE4AE /* SwiftLevelDBAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				0CF7F6001D6CF49F00725EFB /* BaseTestClass.swift */,
+				0CF7F6011D6CF49F00725EFB /* MainTests.swift */,
 				0C4F5ED81D6B72EA00BEE4AE /* SwiftLevelDBAppTests.swift */,
 				0C4F5EDA1D6B72EA00BEE4AE /* Info.plist */,
 			);
 			path = SwiftLevelDBAppTests;
+			sourceTree = "<group>";
+		};
+		0CF7F60B1D6D01E400725EFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CF7F6081D6D01C300725EFB /* CLevelDB.framework */,
+				0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C4F5ED91D6B72EA00BEE4AE /* SwiftLevelDBAppTests.swift in Sources */,
+				0CF7F6061D6CF7EB00725EFB /* MainTests.swift in Sources */,
+				0CF7F6021D6CF49F00725EFB /* BaseTestClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +416,7 @@
 				0C4F5EDF1D6B72EA00BEE4AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C4F5EE01D6B72EA00BEE4AE /* Build configuration list for PBXNativeTarget "SwiftLevelDBAppTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +425,7 @@
 				0C4F5EE21D6B72EA00BEE4AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
