@@ -12,7 +12,6 @@
 		0C9BCDAD1D6EA023004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDA91D6EA023004F32FE /* ViewController.swift */; };
 		0C9BCDB01D6EA082004F32FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
 		0C9BCDB81D6EA0A7004F32FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB71D6EA0A7004F32FE /* Info.plist */; };
-		0C9BCDBA1D6EA0BE004F32FE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB91D6EA0BE004F32FE /* README.md */; };
 		0C9BCDBB1D6EA0CD004F32FE /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
 		0C9BCDBC1D6EA0D0004F32FE /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
 		0C9BCDC21D6EA356004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDBE1D6EA356004F32FE /* LaunchScreen.storyboard */; };
@@ -77,12 +76,12 @@
 		0C4F5EB71D6B72EA00BEE4AE = {
 			isa = PBXGroup;
 			children = (
+				0C9BCDB71D6EA0A7004F32FE /* Info.plist */,
 				0C9BCDC51D6EA401004F32FE /* Package.swift */,
 				0C9BCDB91D6EA0BE004F32FE /* README.md */,
-				0C9BCDB71D6EA0A7004F32FE /* Info.plist */,
+				0CF7F60B1D6D01E400725EFB /* Frameworks */,
 				0C9BCDA41D6EA00B004F32FE /* Sources */,
 				0C9BCDA51D6EA011004F32FE /* Tests */,
-				0CF7F60B1D6D01E400725EFB /* Frameworks */,
 				0C4F5EC11D6B72EA00BEE4AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -247,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9BCDBA1D6EA0BE004F32FE /* README.md in Sources */,
 				0C9BCDAD1D6EA023004F32FE /* ViewController.swift in Sources */,
 				0C9BCDAA1D6EA023004F32FE /* AppDelegate.swift in Sources */,
 			);
