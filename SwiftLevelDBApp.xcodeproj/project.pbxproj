@@ -47,6 +47,7 @@
 		0C9BCDB91D6EA0BE004F32FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C9BCDBF1D6EA356004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C9BCDC11D6EA356004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C9BCDC51D6EA401004F32FE /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-hjjomupxthkhxzdlfepaxhwtjvzt/Build/Products/Debug-iphonesimulator/SwiftLevelDB.framework"; sourceTree = "<group>"; };
 		0CF7F6081D6D01C300725EFB /* CLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-hjjomupxthkhxzdlfepaxhwtjvzt/Build/Products/Debug-iphonesimulator/CLevelDB.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +77,7 @@
 		0C4F5EB71D6B72EA00BEE4AE = {
 			isa = PBXGroup;
 			children = (
+				0C9BCDC51D6EA401004F32FE /* Package.swift */,
 				0C9BCDB91D6EA0BE004F32FE /* README.md */,
 				0C9BCDB71D6EA0A7004F32FE /* Info.plist */,
 				0C9BCDA41D6EA00B004F32FE /* Sources */,
