@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C9BCDAA1D6EA023004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDA61D6EA023004F32FE /* AppDelegate.swift */; };
-		0C9BCDAB1D6EA023004F32FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDA71D6EA023004F32FE /* Assets.xcassets */; };
-		0C9BCDAD1D6EA023004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDA91D6EA023004F32FE /* ViewController.swift */; };
+		0C1FA5901D6FA5A200E036EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FA58F1D6FA5A200E036EE /* Info.plist */; };
 		0C9BCDB01D6EA082004F32FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
-		0C9BCDB81D6EA0A7004F32FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB71D6EA0A7004F32FE /* Info.plist */; };
 		0C9BCDBB1D6EA0CD004F32FE /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
 		0C9BCDBC1D6EA0D0004F32FE /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
-		0C9BCDC21D6EA356004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDBE1D6EA356004F32FE /* LaunchScreen.storyboard */; };
-		0C9BCDC31D6EA356004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDC01D6EA356004F32FE /* Main.storyboard */; };
+		0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */; };
+		0C9BCDD31D6F90E0004F32FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCF1D6F90E0004F32FE /* Assets.xcassets */; };
+		0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD11D6F90E0004F32FE /* ViewController.swift */; };
+		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
+		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
 		0CF7F6051D6CF61100725EFB /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */; };
 		0CF7F6071D6D01C000725EFB /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */; };
 		0CF7F6091D6D01C300725EFB /* CLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF7F6081D6D01C300725EFB /* CLevelDB.framework */; };
@@ -33,20 +33,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1FA58F1D6FA5A200E036EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftLevelDBApp/Info.plist; sourceTree = "<group>"; };
 		0C4F5EC01D6B72EA00BEE4AE /* SwiftLevelDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLevelDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLevelDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C9BCDA61D6EA023004F32FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/AppDelegate.swift; sourceTree = "<group>"; };
-		0C9BCDA71D6EA023004F32FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = "<group>"; };
-		0C9BCDA91D6EA023004F32FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/ViewController.swift; sourceTree = "<group>"; };
 		0C9BCDAF1D6EA082004F32FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTestClass.swift; path = Tests/SwiftLevelDBAppTests/BaseTestClass.swift; sourceTree = "<group>"; };
 		0C9BCDB21D6EA097004F32FE /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTests.swift; path = Tests/SwiftLevelDBAppTests/MainTests.swift; sourceTree = "<group>"; };
 		0C9BCDB31D6EA097004F32FE /* SwiftLevelDBAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftLevelDBAppTests.swift; path = Tests/SwiftLevelDBAppTests/SwiftLevelDBAppTests.swift; sourceTree = "<group>"; };
-		0C9BCDB71D6EA0A7004F32FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C9BCDB91D6EA0BE004F32FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0C9BCDBF1D6EA356004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0C9BCDC11D6EA356004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C9BCDC51D6EA401004F32FE /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SwiftLevelDBApp/AppDelegate.swift; sourceTree = "<group>"; };
+		0C9BCDCF1D6F90E0004F32FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SwiftLevelDBApp/Assets.xcassets; sourceTree = "<group>"; };
+		0C9BCDD11D6F90E0004F32FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SwiftLevelDBApp/ViewController.swift; sourceTree = "<group>"; };
+		0C9BCDD81D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0C9BCDDA1D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CF7F6041D6CF61100725EFB /* SwiftLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-hjjomupxthkhxzdlfepaxhwtjvzt/Build/Products/Debug-iphonesimulator/SwiftLevelDB.framework"; sourceTree = "<group>"; };
 		0CF7F6081D6D01C300725EFB /* CLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-hjjomupxthkhxzdlfepaxhwtjvzt/Build/Products/Debug-iphonesimulator/CLevelDB.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,11 +76,10 @@
 		0C4F5EB71D6B72EA00BEE4AE = {
 			isa = PBXGroup;
 			children = (
-				0C9BCDB71D6EA0A7004F32FE /* Info.plist */,
 				0C9BCDC51D6EA401004F32FE /* Package.swift */,
 				0C9BCDB91D6EA0BE004F32FE /* README.md */,
 				0CF7F60B1D6D01E400725EFB /* Frameworks */,
-				0C9BCDA41D6EA00B004F32FE /* Sources */,
+				0C9BCDCD1D6F90B9004F32FE /* SwiftLevelDBApp */,
 				0C9BCDA51D6EA011004F32FE /* Tests */,
 				0C4F5EC11D6B72EA00BEE4AE /* Products */,
 			);
@@ -93,17 +92,6 @@
 				0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0C9BCDA41D6EA00B004F32FE /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				0C9BCDA61D6EA023004F32FE /* AppDelegate.swift */,
-				0C9BCDA71D6EA023004F32FE /* Assets.xcassets */,
-				0C9BCDC41D6EA376004F32FE /* Base.lproj */,
-				0C9BCDA91D6EA023004F32FE /* ViewController.swift */,
-			);
-			name = Sources;
 			sourceTree = "<group>";
 		};
 		0C9BCDA51D6EA011004F32FE /* Tests */ = {
@@ -125,11 +113,23 @@
 			name = SwiftLevelDBAppTests;
 			sourceTree = "<group>";
 		};
-		0C9BCDC41D6EA376004F32FE /* Base.lproj */ = {
+		0C9BCDCD1D6F90B9004F32FE /* SwiftLevelDBApp */ = {
 			isa = PBXGroup;
 			children = (
-				0C9BCDBE1D6EA356004F32FE /* LaunchScreen.storyboard */,
-				0C9BCDC01D6EA356004F32FE /* Main.storyboard */,
+				0C1FA58F1D6FA5A200E036EE /* Info.plist */,
+				0C9BCDD61D6F9118004F32FE /* Base.lproj */,
+				0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */,
+				0C9BCDCF1D6F90E0004F32FE /* Assets.xcassets */,
+				0C9BCDD11D6F90E0004F32FE /* ViewController.swift */,
+			);
+			name = SwiftLevelDBApp;
+			sourceTree = "<group>";
+		};
+		0C9BCDD61D6F9118004F32FE /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */,
+				0C9BCDD91D6F91BC004F32FE /* Main.storyboard */,
 			);
 			name = Base.lproj;
 			sourceTree = "<group>";
@@ -224,10 +224,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9BCDB81D6EA0A7004F32FE /* Info.plist in Resources */,
-				0C9BCDC31D6EA356004F32FE /* Main.storyboard in Resources */,
-				0C9BCDC21D6EA356004F32FE /* LaunchScreen.storyboard in Resources */,
-				0C9BCDAB1D6EA023004F32FE /* Assets.xcassets in Resources */,
+				0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */,
+				0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */,
+				0C9BCDD31D6F90E0004F32FE /* Assets.xcassets in Resources */,
+				0C1FA5901D6FA5A200E036EE /* Info.plist in Resources */,
 				0C9BCDB01D6EA082004F32FE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,8 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9BCDAD1D6EA023004F32FE /* ViewController.swift in Sources */,
-				0C9BCDAA1D6EA023004F32FE /* AppDelegate.swift in Sources */,
+				0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */,
+				0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,18 +271,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C9BCDBE1D6EA356004F32FE /* LaunchScreen.storyboard */ = {
+		0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0C9BCDBF1D6EA356004F32FE /* Base */,
+				0C9BCDD81D6F91BC004F32FE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		0C9BCDC01D6EA356004F32FE /* Main.storyboard */ = {
+		0C9BCDD91D6F91BC004F32FE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0C9BCDC11D6EA356004F32FE /* Base */,
+				0C9BCDDA1D6F91BC004F32FE /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -380,7 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = SwiftLevelDBApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amr.SwiftLevelDBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,7 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = SwiftLevelDBApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amr.SwiftLevelDBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
