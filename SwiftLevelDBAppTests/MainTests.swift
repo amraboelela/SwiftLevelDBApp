@@ -186,31 +186,32 @@ class MainTests: BaseTestClass {
         })
     }
 
-    /*
     func testBackwardKeyEnumerations() {
         guard let db = db else {
             print("Database reference is not existent, failed to open / create database")
             return
         }
         var r: Int
-        var key: String
-        var value: [NSObject]
         var pairs = self.nPairs(numberOfIterations)
         // Test that enumerating the whole set backwards yields keys in the correct orders
         r = pairs.count - 1
-        db.enumerateKeysWithPredicate(true, startingAtKey: nil, filteredByPredicate: nil, andPrefix: nil, usingBlock: {lkey, stop in
+        db.enumerateKeys(backward: true, startingAtKey: nil, andPrefix: nil, usingBlock: {lkey, stop in
+            var key: String
+            var value: [NSObject]
             var pair = pairs[r]
-            key = pair[0]
-            value = pair[1]
+            key = pair[0] as! String
+            value = pair[1] as! [NSObject]
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             r -= 1
         })
         // Test that enumerating the set backwards at an offset yields keys in the correct orders
         r = 567
-        db.enumerateKeysWithPredicate(true, startingAtKey: pairs[r][0], filteredByPredicate: nil, andPrefix: nil, usingBlock: {lkey, stop in
+        db.enumerateKeys(backward: true, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, stop in
+            var key: String
+            var value: [NSObject]
             var pair = pairs[r]
-            key = pair[0]
-            value = pair[1]
+            key = pair[0] as! String
+            value = pair[1] as! [NSObject]
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             r -= 1
         })
@@ -221,20 +222,22 @@ class MainTests: BaseTestClass {
             print("Database reference is not existent, failed to open / create database")
             return
         }
-        var valueFor = {(i: Int) -> id in
+        let valueFor = {(i: Int) -> [String: Int] in
                 return ["key": i]
             }
-        var pairs = ["tess:0": valueFor(0), "tesa:0": valueFor(0), "test:1": valueFor(1), "test:2": valueFor(2), "test:3": valueFor(3), "test:4": valueFor(4)]
+        let pairs = ["tess:0": valueFor(0), "tesa:0": valueFor(0), "test:1": valueFor(1), "test:2": valueFor(2), "test:3": valueFor(3), "test:4": valueFor(4)]
         var i = 3
-        db += pairs
-        db.enumerateKeysWithPredicate(true, startingAtKey: "test:3", filteredByPredicate: nil, andPrefix: "test", usingBlock: {lkey, stop in
-            var key = "test:\(i)"
+        db.addEntriesFromDictionary(pairs)
+        db.enumerateKeys(backward: true, startingAtKey: "test:3", andPrefix: "test", usingBlock: {lkey, stop in
+            let key = "test:\(i)"
+            print("\(i) \(lkey) \(key)")
             XCTAssertEqual(lkey, key, "Keys should be restricted to the prefixed region")
             i -= 1
         })
         XCTAssertEqual(i, 0, "")
     }
 
+    /*
     func testPrefixedEnumerations() {
         guard let db = db else {
             print("Database reference is not existent, failed to open / create database")
