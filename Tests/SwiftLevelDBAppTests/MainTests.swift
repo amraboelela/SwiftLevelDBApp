@@ -14,6 +14,11 @@ class MainTests: BaseTestClass {
     var numberOfIterations = 2500
     
     func testDatabaseCreated() {
+        #if swift(>=3.0)
+            print("Running Swift 3.0 or later")
+        #else
+            print("Running Swift 2.2 or earlier")
+        #endif
         XCTAssertNotNil(db, "Database should not be nil")
     }
 

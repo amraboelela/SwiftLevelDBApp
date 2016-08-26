@@ -20,14 +20,12 @@ class BaseTestClass: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        //dispatch_sync(lvldb_test_queue, ^{
         db = LevelDB.databaseInLibraryWithName("TestDB\(BaseTestClass.db_i)")
         guard let db = db else {
             print("Database reference is not existent, failed to open / create database")
             return
         }
         BaseTestClass.db_i += 1
-        //});
         db.removeAllObjects()
         db.encoder = {(key: String, value: NSObject) -> NSData? in
             do {
