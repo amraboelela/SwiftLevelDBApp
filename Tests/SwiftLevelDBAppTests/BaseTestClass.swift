@@ -8,6 +8,8 @@
 
 import XCTest
 import SwiftLevelDB
+import Dispatch
+import Foundation
 
 @testable import SwiftLevelDBApp
 
@@ -15,7 +17,8 @@ class BaseTestClass: XCTestCase {
     
     var db : LevelDB?
     static var db_i = 0
-    var lvldb_test_queue : dispatch_queue_t = dispatch_queue_create("Create DB", DISPATCH_QUEUE_SERIAL)
+    //var lvldb_test_queue : dispatch_queue_t = dispatch_queue_create("Create DB", DISPATCH_QUEUE_SERIAL)
+    var lvldb_test_queue = DispatchQueue(label: "Create DB")
     
     override func setUp() {
         super.setUp()
@@ -27,18 +30,21 @@ class BaseTestClass: XCTestCase {
         }
         BaseTestClass.db_i += 1
         db.removeAllObjects()
-        db.encoder = {(key: String, value: NSObject) -> NSData? in
+        db.encoder = {(key: String, value: NSObject) -> Data? in
             do {
-                return try NSJSONSerialization.dataWithJSONObject(value, options: [])
+                print("db.encoder key: \(key), value: \(value)")
+                let result = try JSONSerialization.data(withJSONObject: value)
+                print("db.encoder JSONSerialization.data result: \(result)")
+                return result
             }
             catch let error {
                 print("Problem encoding data: \(error)")
                 return nil
             }
         }
-        db.decoder = {(key: String, data: NSData) -> NSObject? in
+        db.decoder = {(key: String, data: Data) -> NSObject? in
             do {
-                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSObject
+                return try JSONSerialization.jsonObject(with: data) as? NSObject
             }
             catch let error {
                 print("Problem decoding data: \(error)")
