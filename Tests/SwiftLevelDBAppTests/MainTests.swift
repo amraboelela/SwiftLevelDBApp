@@ -26,12 +26,12 @@ class MainTests: BaseTestClass {
         let key = "dict1"
         let value1 = ["foo": "bar"] 
         db[key] = value1
-        XCTAssertEqual(NSObject.fromAny(db[key]), NSObject.fromAny(value1), "Saving and retrieving should keep an dictionary intact")
+        XCTAssertEqual(db[key] as! [String : String], value1, "Saving and retrieving should keep an dictionary intact")
         db.removeObjectForKey("dict1")
         XCTAssertNil(db["dict1"], "A deleted key should return nil")
         let value2 = ["foo", "bar"]
         db[key] = value2
-        XCTAssertEqual(NSObject.fromAny(db[key]), NSObject.fromAny(value2), "Saving and retrieving should keep an array intact")
+        XCTAssertEqual(db[key] as! [String], value2, "Saving and retrieving should keep an array intact")
         db.removeObjectsForKeys(["array1"])
         XCTAssertNil(db["array1"], "A key that was deleted in batch should return nil")
     }
@@ -89,7 +89,6 @@ class MainTests: BaseTestClass {
             print("Database reference is not existent, failed to open / create database")
             return
         }
-
         let predicate = NSPredicate { (obj, bindings) -> Bool in
             let dic = obj as! [String: Int]
             let price = dic["price"]!
@@ -109,27 +108,25 @@ class MainTests: BaseTestClass {
         XCTAssertEqual(db.keysByFilteringWithPredicate(predicate), resultKeys, "Filtering db keys with a predicate should return the same list as expected")
         var allObjects = db.dictionaryByFilteringWithPredicate(predicate)
         XCTAssertEqual(allObjects.keys.sorted{$0 < $1}, resultKeys, "A dictionary obtained by filtering with a predicate should yield the expected list of keys")
-        //print("testPredicateFiltering 2.4")
         var i = 0
-        //print("testPredicateFiltering 3")
         db.enumerateKeysWithPredicate(predicate, backward: false, startingAtKey: nil, andPrefix: nil, usingBlock: {key, stop in
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(resultKeys[i]), "Enumerating by filtering with a predicate should yield the expected keys")
+            XCTAssertEqual(key, resultKeys[i], "Enumerating by filtering with a predicate should yield the expected keys")
             i += 1
         })
         i = Int(resultKeys.count) - 1
         db.enumerateKeysWithPredicate(predicate, backward:true, startingAtKey: nil, andPrefix: nil, usingBlock: {key, stop in
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(resultKeys[i]), "Enumerating backwards by filtering with a predicate should yield the expected keys")
+            XCTAssertEqual(key, resultKeys[i], "Enumerating backwards by filtering with a predicate should yield the expected keys")
             i -= 1
         })
         i = 0
         db.enumerateKeysAndObjectsWithPredicate(predicate, backward: false, startingAtKey: nil, andPrefix: nil, usingBlock: {key, value, stop in
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(resultKeys[i]), "Enumerating keys and objects by filtering with a predicate should yield the expected keys")
+            XCTAssertEqual(key, resultKeys[i], "Enumerating keys and objects by filtering with a predicate should yield the expected keys")
             XCTAssertEqual(NSObject.fromAny(value), NSObject.fromAny(allObjects[resultKeys[i]]), "Enumerating keys and objects by filtering with a predicate should yield the expected values")
             i += 1
         })
         i = Int(resultKeys.count) - 1
         db.enumerateKeysAndObjectsWithPredicate(predicate, backward: true, startingAtKey: nil, andPrefix: nil, usingBlock: {key, value, stop in
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(resultKeys[i]), "Enumerating keys and objects by filtering with a predicate should yield the expected keys")
+            XCTAssertEqual(key, resultKeys[i], "Enumerating keys and objects by filtering with a predicate should yield the expected keys")
             XCTAssertEqual(NSObject.fromAny(value), NSObject.fromAny(allObjects[resultKeys[i]]), "Enumerating keys and objects by filtering with a predicate should yield the expected values")
             i -= 1
         })
@@ -186,7 +183,7 @@ class MainTests: BaseTestClass {
         db.enumerateKeysUsingBlock({lkey, stop in
             var pair = pairs[r]
             let key = pair[0]
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(lkey), "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             r += 1
         })
         // Test that enumerating the set by starting at an offset yields keys in the correct orders
@@ -194,7 +191,7 @@ class MainTests: BaseTestClass {
         db.enumerateKeys(backward: false, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, stop in
             var pair = pairs[r]
             let key = pair[0]
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(lkey), "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             r += 1
         })
     }
@@ -211,7 +208,7 @@ class MainTests: BaseTestClass {
         db.enumerateKeys(backward: true, startingAtKey: nil, andPrefix: nil, usingBlock: {lkey, stop in
             var pair = pairs[r]
             let key = pair[0]
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(lkey), "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             r -= 1
         })
         // Test that enumerating the set backwards at an offset yields keys in the correct orders
@@ -219,7 +216,7 @@ class MainTests: BaseTestClass {
         db.enumerateKeys(backward: true, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, stop in
             var pair = pairs[r]
             let key = pair[0]
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(lkey), "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             r -= 1
         })
     }
@@ -237,7 +234,7 @@ class MainTests: BaseTestClass {
         db.addEntriesFromDictionary(pairs)
         db.enumerateKeys(backward: true, startingAtKey: "test:3", andPrefix: "test", usingBlock: {lkey, stop in
             let key = "test:\(i)"
-            XCTAssertEqual(NSObject.fromAny(lkey), NSObject.fromAny(key), "Keys should be restricted to the prefixed region")
+            XCTAssertEqual(lkey, key, "Keys should be restricted to the prefixed region")
             i -= 1
         })
         XCTAssertEqual(i, 0, "")
@@ -300,9 +297,9 @@ class MainTests: BaseTestClass {
         var r = 0
         db.enumerateKeysAndObjectsUsingBlock({lkey, _value, stop in
             var pair = pairs[r]
-            let key = pair[0] as! String
+            let key = pair[0]
             let value = pair[1]
-            XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(NSObject.fromAny(_value), NSObject.fromAny(value), "Values should be equal, given the ordering worked")
             r += 1
         })
@@ -310,9 +307,9 @@ class MainTests: BaseTestClass {
         r = 432
         db.enumerateKeysAndObjects(backward: false, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, _value, stop in
             var pair = pairs[r]
-            let key = pair[0] as? String
+            let key = pair[0]
             let value = pair[1]
-            XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(NSObject.fromAny(_value), NSObject.fromAny(value), "Values should be equal, given the ordering worked")
             r += 1
         })
@@ -330,7 +327,7 @@ class MainTests: BaseTestClass {
             var pair = pairs[r]
             let key = pair[0]
             let value = pair[1]
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(lkey), "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(NSObject.fromAny(_value), NSObject.fromAny(value), "Values should be equal, given the ordering worked")
             r -= 1
         })
@@ -340,7 +337,7 @@ class MainTests: BaseTestClass {
             var pair = pairs[r]
             let key = pair[0]
             let value = pair[1]
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(lkey), "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(NSObject.fromAny(_value), NSObject.fromAny(value), "Values should be equal, given the ordering worked")
             r -= 1
         })
@@ -358,7 +355,7 @@ class MainTests: BaseTestClass {
             var pair = pairs[r]
             let key = pair[0]
             let value = pair[1]
-            XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(lkey), "Keys should be equal, given the ordering worked")
+            XCTAssertEqual(key as! String, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(NSObject.fromAny(getter()), NSObject.fromAny(value), "Values should be equal, given the ordering worked")
             r -= 1
         })
@@ -373,6 +370,8 @@ class MainTests: BaseTestClass {
             ("testRemovingKeysWithPrefix", testRemovingKeysWithPrefix),
             ("testDictionaryManipulations", testDictionaryManipulations),
             ("testPredicateFiltering", testPredicateFiltering),
+            ("testForwardKeyEnumerations", testForwardKeyEnumerations),
+            ("testBackwardKeyEnumerations", testBackwardKeyEnumerations),
         ]
     }
 }
