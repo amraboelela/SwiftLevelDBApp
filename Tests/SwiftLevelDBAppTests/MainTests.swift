@@ -245,7 +245,7 @@ class MainTests: BaseTestClass {
             print("Database reference is not existent, failed to open / create database")
             return
         }
-        let valueFor = {(i: Int) -> [String: Int] in
+        let valueFor = {(i: Int) -> [String : Int] in
                 return ["key": i]
             }
         let pairs = ["tess:0" : valueFor(0), "tesa:0" : valueFor(0), "test:1" : valueFor(1), "test:2" : valueFor(2), "test:3" : valueFor(3), "test:4" : valueFor(4)] 
@@ -263,8 +263,8 @@ class MainTests: BaseTestClass {
         db.enumerateKeysAndObjects(backward: true, startingAtKey: nil, andPrefix: "test", usingBlock: {lkey, value, stop in
             let key = "test:\(i)"
             XCTAssertEqual(lkey, key, "Keys should be restricted to the prefixed region")
-            let dic = NSObject.fromAny(value) as! NSDictionary
-            XCTAssertEqual(NSObject.fromAny(dic["key"]), NSObject.fromAny(i), "Values should be restricted to the prefixed region")
+            let dic = value as! [String : Int]
+            XCTAssertEqual(dic["key"], i, "Values should be restricted to the prefixed region")
             i -= 1
         })
         XCTAssertEqual(i, 0, "")
@@ -280,8 +280,8 @@ class MainTests: BaseTestClass {
         db.enumerateKeysAndObjects(backward: false, startingAtKey: nil, andPrefix: "test", usingBlock: {lkey, value, stop in
             let key = "test:\(i)"
             XCTAssertEqual(lkey, key, "Keys should be restricted to the prefixed region")
-            let dic = NSObject.fromAny(value) as! NSDictionary 
-            XCTAssertEqual(dic["key"] as! Int, i, "Values should be restricted to the prefixed region")
+            let dic = value as! [String : Int] 
+            XCTAssertEqual(dic["key"], i, "Values should be restricted to the prefixed region")
             i += 1
         })
         XCTAssertEqual(i, 5, "")
@@ -372,6 +372,11 @@ class MainTests: BaseTestClass {
             ("testPredicateFiltering", testPredicateFiltering),
             ("testForwardKeyEnumerations", testForwardKeyEnumerations),
             ("testBackwardKeyEnumerations", testBackwardKeyEnumerations),
+            ("testBackwardPrefixedEnumerationsWithStartingKey", testBackwardPrefixedEnumerationsWithStartingKey),
+            ("testPrefixedEnumerations", testPrefixedEnumerations),
+            ("testForwardKeyAndValueEnumerations", testForwardKeyAndValueEnumerations),
+            ("testBackwardKeyAndValueEnumerations", testBackwardKeyAndValueEnumerations),
+            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),
         ]
     }
 }
