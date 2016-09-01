@@ -24,14 +24,12 @@ class MainTests: BaseTestClass {
             return
         }
         let key = "dict1"
-        let value1 = ["foo": "bar"] as! NSDictionary
+        let value1 : NSDictionary = ["foo": "bar"] 
         db[key] = value1
-        //print("testContentIntegrity 5")
         XCTAssertEqual(db[key] as? NSDictionary, value1, "Saving and retrieving should keep an dictionary intact")
-        //print("testContentIntegrity 6")
         db.removeObjectForKey("dict1")
         XCTAssertNil(db["dict1"], "A deleted key should return nil")
-        let value2 = ["foo", "bar"] as! NSArray
+        let value2 : NSArray = ["foo", "bar"]
         db[key] = value2
         XCTAssertEqual(db[key] as? NSArray, value2, "Saving and retrieving should keep an array intact")
         db.removeObjectsForKeys(["array1"])
@@ -43,7 +41,7 @@ class MainTests: BaseTestClass {
             print("Database reference is not existent, failed to open / create database")
             return
         }
-        let value = ["foo": "bar"] as! NSDictionary
+        let value : NSDictionary = ["foo": "bar"] 
         db["dict1"] = value
         db["dict2"] = value
         db["dict3"] = value
@@ -59,11 +57,11 @@ class MainTests: BaseTestClass {
             print("Database reference is not existent, failed to open / create database")
             return
         }
-        let value = ["foo": "bar"] as! NSDictionary
+        let value : NSDictionary = ["foo": "bar"] 
         db["dict1"] = value
         db["dict2"] = value
         db["dict3"] = value
-        db["array1"] = [1, 2, 3] as! NSArray
+        db["array1"] = [1, 2, 3] as NSArray
         db.removeAllObjectsWithPrefix("dict")
         XCTAssertEqual(db.allKeys().count, Int(1), "There should be only 1 key remaining after removing all those prefixed with 'dict'")
     }
@@ -73,11 +71,11 @@ class MainTests: BaseTestClass {
             print("Database reference is not existent, failed to open / create database")
             return
         }
-        var objects = ["key1": [1, 2], "key2": ["foo": "bar"], "key3": [[:]]] as! NSDictionary
+        let objects : NSDictionary = ["key1": [1, 2], "key2": ["foo": "bar"], "key3": [[:]]] 
         db.addEntriesFromDictionary(objects)
         var keys = ["key1", "key2", "key3"]
         for key in keys {
-            XCTAssertEqual(db[key], objects[key] as! NSObject, "Objects should match between dictionary and db")
+            XCTAssertEqual(db[key], objects[key] as? NSObject, "Objects should match between dictionary and db")
         }
         keys = ["key1", "key2", "key9"]
         let extractedObjects = zip(keys, db.objectsForKeys(keys)).reduce([String:NSObject]()){ var d = $0; d[$1.0] = $1.1; return d }
@@ -138,19 +136,18 @@ class MainTests: BaseTestClass {
             return [[]]
         }
         var pairs = [[NSObject]]()
-        //DispatchQueue.apply(attributes:iterations: n, (i: size_t) -> Void in
         for i in 0..<n {
-        lvldb_test_queue.sync {
-            var r: Int
-            var key: String
-            repeat {
-                r = Int(random() % (5000 + 1)) //arc4random_uniform(5000))
-                key = "\(r)"
-            } while db.objectExistsForKey(key)
-            let value = [r, i]
-            pairs.append([key as! NSString, value as! NSArray])
-            db[key] = value as? NSArray
-        }
+            lvldb_test_queue.sync {
+                var r: Int
+                var key: String
+                repeat {
+                    r = Int(random() % (5000 + 1)) //arc4random_uniform(5000))
+                    key = "\(r)"
+                } while db.objectExistsForKey(key)
+                let value : NSArray = [r, i]
+                pairs.append([NSString(string: key), value])
+                db[key] = value 
+            }
         }
 /*
         dispatch_apply(n, lvldb_test_queue, {(i: size_t) -> Void in
@@ -165,8 +162,8 @@ class MainTests: BaseTestClass {
             db[key] = value
         })*/
         pairs.sort{
-            let obj1 = $0[0] as! String
-            let obj2 = $1[0] as! String
+            let obj1 = String.fromNSObject($0[0])
+            let obj2 = String.fromNSObject($1[0])
             return obj1 < obj2
         }
         return pairs
@@ -183,16 +180,15 @@ class MainTests: BaseTestClass {
         r = 0
         db.enumerateKeysUsingBlock({lkey, stop in
             var pair = pairs[r]
-            let key = pair[0] as! String
+            let key = String.fromNSObject(pair[0])
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             r += 1
         })
         // Test that enumerating the set by starting at an offset yields keys in the correct orders
         r = 432
-        //let keyStart = pairs[r][0] as! NSString
-        db.enumerateKeys(backward: false, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, stop in
+        db.enumerateKeys(backward: false, startingAtKey: String.fromNSObject(pairs[r][0]), andPrefix: nil, usingBlock: {lkey, stop in
             var pair = pairs[r]
-            let key = pair[0] as! String
+            let key = String.fromNSObject(pair[0])
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             r += 1
         })
@@ -209,15 +205,15 @@ class MainTests: BaseTestClass {
         var r = pairs.count - 1
         db.enumerateKeys(backward: true, startingAtKey: nil, andPrefix: nil, usingBlock: {lkey, stop in
             var pair = pairs[r]
-            let key = pair[0] as! String
+            let key = String.fromNSObject(pair[0])
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             r -= 1
         })
         // Test that enumerating the set backwards at an offset yields keys in the correct orders
         r = 567
-        db.enumerateKeys(backward: true, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, stop in
+        db.enumerateKeys(backward: true, startingAtKey: String.fromNSObject(pairs[r][0]), andPrefix: nil, usingBlock: {lkey, stop in
             var pair = pairs[r]
-            let key = pair[0] as! String
+            let key = String.fromNSObject(pair[0])
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             r -= 1
         })
@@ -231,7 +227,7 @@ class MainTests: BaseTestClass {
         let valueFor = {(i: Int) -> NSObject in
                 return ["key": i] as NSDictionary
             }
-        let pairs = ["tess:0": valueFor(0), "tesa:0": valueFor(0), "test:1": valueFor(1), "test:2": valueFor(2), "test:3": valueFor(3), "test:4": valueFor(4)] as! NSDictionary
+        let pairs : NSDictionary = ["tess:0": valueFor(0), "tesa:0": valueFor(0), "test:1": valueFor(1), "test:2": valueFor(2), "test:3": valueFor(3), "test:4": valueFor(4)]
         var i = 3
         db.addEntriesFromDictionary(pairs)
         db.enumerateKeys(backward: true, startingAtKey: "test:3", andPrefix: "test", usingBlock: {lkey, stop in
@@ -250,7 +246,7 @@ class MainTests: BaseTestClass {
         let valueFor = {(i: Int) -> NSObject in
                 return ["key": i] as NSDictionary
             }
-        let pairs = ["tess:0": valueFor(0), "tesa:0": valueFor(0), "test:1": valueFor(1), "test:2": valueFor(2), "test:3": valueFor(3), "test:4": valueFor(4)] 
+        let pairs : NSDictionary = ["tess:0": valueFor(0), "tesa:0": valueFor(0), "test:1": valueFor(1), "test:2": valueFor(2), "test:3": valueFor(3), "test:4": valueFor(4)] 
         var i = 4
         db.addEntriesFromDictionary(pairs)
         db.enumerateKeys(backward: true, startingAtKey: nil, andPrefix: "test", usingBlock: {lkey, stop in
@@ -265,8 +261,8 @@ class MainTests: BaseTestClass {
         db.enumerateKeysAndObjects(backward: true, startingAtKey: nil, andPrefix: "test", usingBlock: {lkey, value, stop in
             let key = "test:\(i)"
             XCTAssertEqual(lkey, key, "Keys should be restricted to the prefixed region")
-            let dic = value as! [String: Int]
-            XCTAssertEqual(dic["key"], i, "Values should be restricted to the prefixed region")
+            let dic = value as! NSDictionary // [String: Int]
+            XCTAssertEqual(dic["key"] as! Int, i, "Values should be restricted to the prefixed region")
             i -= 1
         })
         XCTAssertEqual(i, 0, "")
@@ -282,8 +278,8 @@ class MainTests: BaseTestClass {
         db.enumerateKeysAndObjects(backward: false, startingAtKey: nil, andPrefix: "test", usingBlock: {lkey, value, stop in
             let key = "test:\(i)"
             XCTAssertEqual(lkey, key, "Keys should be restricted to the prefixed region")
-            let dic = value as! [String: Int]
-            XCTAssertEqual(dic["key"], i, "Values should be restricted to the prefixed region")
+            let dic = value as! NSDictionary
+            XCTAssertEqual(dic["key"] as! Int, i, "Values should be restricted to the prefixed region")
             i += 1
         })
         XCTAssertEqual(i, 5, "")
@@ -299,7 +295,7 @@ class MainTests: BaseTestClass {
         var r = 0
         db.enumerateKeysAndObjectsUsingBlock({lkey, _value, stop in
             var pair = pairs[r]
-            let key = pair[0] as? String
+            let key = String.fromNSObject(pair[0])
             let value = pair[1]
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(_value, value, "Values should be equal, given the ordering worked")
@@ -307,10 +303,9 @@ class MainTests: BaseTestClass {
         })
         // Test that enumerating the set by starting at an offset yields pairs in the correct orders
         r = 432
-        //let startingKey = pairs[r][0] as! NSString
-        db.enumerateKeysAndObjects(backward: false, startingAtKey: String.fromNSString(pairs[r][0] as? NSString), andPrefix: nil, usingBlock: {lkey, _value, stop in
+        db.enumerateKeysAndObjects(backward: false, startingAtKey: String.fromNSObject(pairs[r][0]), andPrefix: nil, usingBlock: {lkey, _value, stop in
             var pair = pairs[r]
-            let key = pair[0] as? String
+            let key = String.fromNSObject(pair[0])
             let value = pair[1]
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(_value, value, "Values should be equal, given the ordering worked")
@@ -328,7 +323,7 @@ class MainTests: BaseTestClass {
         var r = pairs.count - 1
         db.enumerateKeysAndObjects(backward: true, startingAtKey: nil, andPrefix: nil, usingBlock: {lkey, _value, stop in
             var pair = pairs[r]
-            let key = pair[0] as? String
+            let key = String.fromNSObject(pair[0])
             let value = pair[1]
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(_value, value, "Values should be equal, given the ordering worked")
@@ -336,9 +331,9 @@ class MainTests: BaseTestClass {
         })
         // Test that enumerating the set backwards at an offset yields pairs in the correct orders
         r = 567
-        db.enumerateKeysAndObjects(backward: true, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, _value, stop in
+        db.enumerateKeysAndObjects(backward: true, startingAtKey: String.fromNSObject(pairs[r][0]), andPrefix: nil, usingBlock: {lkey, _value, stop in
             var pair = pairs[r]
-            let key = pair[0] as? String
+            let key = String.fromNSObject(pair[0])
             let value = pair[1]
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(_value, value, "Values should be equal, given the ordering worked")
@@ -354,9 +349,9 @@ class MainTests: BaseTestClass {
         var pairs = self.nPairs(numberOfIterations)
         // Test that enumerating the set backwards and lazily at an offset yields pairs in the correct orders
         var r = 567;
-        db.enumerateKeysAndObjectsLazily(backward: true, startingAtKey: pairs[r][0] as? String, andPrefix: nil, usingBlock: {lkey, getter, stop in
+        db.enumerateKeysAndObjectsLazily(backward: true, startingAtKey: String.fromNSObject(pairs[r][0]), andPrefix: nil, usingBlock: {lkey, getter, stop in
             var pair = pairs[r]
-            let key = pair[0] as? String
+            let key = String.fromNSObject(pair[0])
             let value = pair[1]
             XCTAssertEqual(key, lkey, "Keys should be equal, given the ordering worked")
             XCTAssertEqual(getter(), value, "Values should be equal, given the ordering worked")
