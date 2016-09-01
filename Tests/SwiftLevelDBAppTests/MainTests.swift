@@ -47,9 +47,9 @@ class MainTests: BaseTestClass {
         db["dict3"] = value
         let keys = ["dict1", "dict2", "dict3"]
         let keysFromDB = db.allKeys()
-        XCTAssertEqual(NSObject.fromAny(keysFromDB), NSObject.fromAny(keys), "-[LevelDB allKeys] should return the list of keys used to insert data")
+        XCTAssertEqual(keysFromDB, keys, "-[LevelDB allKeys] should return the list of keys used to insert data")
         db.removeAllObjects()
-        XCTAssertEqual(NSObject.fromAny(db.allKeys()), NSObject.fromAny([]), "The list of keys should be empty after removing all objects from the database")
+        XCTAssertEqual(db.allKeys(), [], "The list of keys should be empty after removing all objects from the database")
     }
 
     func testRemovingKeysWithPrefix() {
@@ -63,7 +63,7 @@ class MainTests: BaseTestClass {
         db["dict3"] = value
         db["array1"] = [1, 2, 3] 
         db.removeAllObjectsWithPrefix("dict")
-        XCTAssertEqual(NSObject.fromAny(db.allKeys().count), NSObject.fromAny(Int(1)), "There should be only 1 key remaining after removing all those prefixed with 'dict'")
+        XCTAssertEqual(db.allKeys().count, Int(1), "There should be only 1 key remaining after removing all those prefixed with 'dict'")
     }
 
     func testDictionaryManipulations() {
@@ -89,23 +89,29 @@ class MainTests: BaseTestClass {
             print("Database reference is not existent, failed to open / create database")
             return
         }
-        let predicate = NSPredicate(format: "price BETWEEN {25, 50}")
+
+        let predicate = NSPredicate { (obj, bindings) -> Bool in
+            let dic = obj as! [String: Int]
+            let price = dic["price"]!
+            return price >= 25 && price <= 50
+        }
         var resultKeys = [String]()
-        var price : Int // UInt32
-        //arc4random_stir()
+        var price : Int 
         for i in 0..<numberOfIterations {
             let numberKey = "\(i)"
-            price = Int(random() % (100 + 1)) //Int(arc4random_uniform(100))
+            price = Int(random() % (100 + 1)) 
             if price >= 25 && price <= 50 {
                 resultKeys.append(numberKey)
             }
             db[numberKey] = ["price": price] 
         }
         resultKeys = resultKeys.sorted{$0 < $1}
-        XCTAssertEqual(NSObject.fromAny(db.keysByFilteringWithPredicate(predicate)), NSObject.fromAny(resultKeys), "Filtering db keys with a predicate should return the same list as expected")
+        XCTAssertEqual(db.keysByFilteringWithPredicate(predicate), resultKeys, "Filtering db keys with a predicate should return the same list as expected")
         var allObjects = db.dictionaryByFilteringWithPredicate(predicate)
-        XCTAssertEqual(NSObject.fromAny(allObjects.keys.sorted{$0 < $1}), NSObject.fromAny(resultKeys), "A dictionary obtained by filtering with a predicate should yield the expected list of keys")
+        XCTAssertEqual(allObjects.keys.sorted{$0 < $1}, resultKeys, "A dictionary obtained by filtering with a predicate should yield the expected list of keys")
+        //print("testPredicateFiltering 2.4")
         var i = 0
+        //print("testPredicateFiltering 3")
         db.enumerateKeysWithPredicate(predicate, backward: false, startingAtKey: nil, andPrefix: nil, usingBlock: {key, stop in
             XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(resultKeys[i]), "Enumerating by filtering with a predicate should yield the expected keys")
             i += 1
@@ -116,7 +122,6 @@ class MainTests: BaseTestClass {
             i -= 1
         })
         i = 0
-        
         db.enumerateKeysAndObjectsWithPredicate(predicate, backward: false, startingAtKey: nil, andPrefix: nil, usingBlock: {key, value, stop in
             XCTAssertEqual(NSObject.fromAny(key), NSObject.fromAny(resultKeys[i]), "Enumerating keys and objects by filtering with a predicate should yield the expected keys")
             XCTAssertEqual(NSObject.fromAny(value), NSObject.fromAny(allObjects[resultKeys[i]]), "Enumerating keys and objects by filtering with a predicate should yield the expected values")
@@ -364,6 +369,10 @@ class MainTests: BaseTestClass {
         return [
             ("testDatabaseCreated", testDatabaseCreated),
             ("testContentIntegrity", testContentIntegrity),
+            ("testKeysManipulation", testKeysManipulation),
+            ("testRemovingKeysWithPrefix", testRemovingKeysWithPrefix),
+            ("testDictionaryManipulations", testDictionaryManipulations),
+            ("testPredicateFiltering", testPredicateFiltering),
         ]
     }
 }

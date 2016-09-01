@@ -17,7 +17,6 @@ class BaseTestClass: XCTestCase {
     
     var db : LevelDB?
     static var db_i = 0
-    //var lvldb_test_queue : dispatch_queue_t = dispatch_queue_create("Create DB", DISPATCH_QUEUE_SERIAL)
     var lvldb_test_queue = DispatchQueue(label: "Create DB")
     
     override func setUp() {
@@ -32,9 +31,9 @@ class BaseTestClass: XCTestCase {
         db.removeAllObjects()
         db.encoder = {(key: String, value: Any) -> Data? in
             do {
-                print("db.encoder key: \(key), value: \(value)")
+                //print("db.encoder key: \(key), value: \(value)")
                 let result = try JSONSerialization.data(withJSONObject: value)
-                print("db.encoder result: \(result.simpleDescription)")
+                //print("db.encoder result: \(result.simpleDescription)")
                 return result
             } catch let error {
                 print("Problem encoding data: \(error)")
@@ -43,9 +42,9 @@ class BaseTestClass: XCTestCase {
         }
         db.decoder = {(key: String, data: Data) -> Any? in
             do {
-                print("db.decoder data: \(data.simpleDescription)")
+                //print("db.decoder data: \(data.simpleDescription)")
                 let result = try JSONSerialization.jsonObject(with: data) 
-                print("db.decoder result: \(result)") 
+                //print("db.decoder result: \(result)") 
                 return result
             } catch let error {
                 print("Problem decoding data: \(error)")
