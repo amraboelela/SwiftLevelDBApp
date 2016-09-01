@@ -7,9 +7,16 @@
 //
 
 import XCTest
-import SwiftLevelDB
-import Dispatch
 import Foundation
+#if swift(>=3.0)
+import Dispatch
+#endif
+import SwiftLevelDB
+
+#if swift(>=3.0)
+#else
+    public typealias Any = AnyObject
+#endif
 
 @testable import SwiftLevelDBApp
 
@@ -17,7 +24,11 @@ class BaseTestClass: XCTestCase {
     
     var db : LevelDB?
     static var db_i = 0
+    #if swift(>=3.0)
     var lvldb_test_queue = DispatchQueue(label: "Create DB")
+    #else
+    var lvldb_test_queue : dispatch_queue_t = dispatch_queue_create("Create DB", DISPATCH_QUEUE_SERIAL)
+    #endif
     
     override func setUp() {
         super.setUp()
@@ -31,10 +42,11 @@ class BaseTestClass: XCTestCase {
         db.removeAllObjects()
         db.encoder = {(key: String, value: Any) -> Data? in
             do {
-                //print("db.encoder key: \(key), value: \(value)")
-                let result = try JSONSerialization.data(withJSONObject: value)
-                //print("db.encoder result: \(result.simpleDescription)")
-                return result
+                #if swift(>=3.0)
+                    return JSONSerialization.data(withJSONObject: value)
+                #else
+                    return try NSJSONSerialization.dataWithJSONObject(value, options: [])
+                #endif
             } catch let error {
                 print("Problem encoding data: \(error)")
                 return nil
@@ -42,10 +54,11 @@ class BaseTestClass: XCTestCase {
         }
         db.decoder = {(key: String, data: Data) -> Any? in
             do {
-                //print("db.decoder data: \(data.simpleDescription)")
-                let result = try JSONSerialization.jsonObject(with: data) 
-                //print("db.decoder result: \(result)") 
-                return result
+                #if swift(>=3.0)
+                    return try JSONSerialization.jsonObject(with: data)
+                #else
+                    return try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                #endif
             } catch let error {
                 print("Problem decoding data: \(error)")
                 return nil
