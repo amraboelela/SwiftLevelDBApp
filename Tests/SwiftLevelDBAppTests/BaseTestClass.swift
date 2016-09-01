@@ -25,9 +25,9 @@ class BaseTestClass: XCTestCase {
     var db : LevelDB?
     static var db_i = 0
     #if swift(>=3.0)
-    var lvldb_test_queue = DispatchQueue(label: "Create DB")
+        var lvldb_test_queue = DispatchQueue(label: "Create DB")
     #else
-    var lvldb_test_queue : dispatch_queue_t = dispatch_queue_create("Create DB", DISPATCH_QUEUE_SERIAL)
+        var lvldb_test_queue : dispatch_queue_t = dispatch_queue_create("Create DB", DISPATCH_QUEUE_SERIAL)
     #endif
     
     override func setUp() {
@@ -43,7 +43,7 @@ class BaseTestClass: XCTestCase {
         db.encoder = {(key: String, value: Any) -> Data? in
             do {
                 #if swift(>=3.0)
-                    return JSONSerialization.data(withJSONObject: value)
+                    return try JSONSerialization.data(withJSONObject: value)
                 #else
                     return try NSJSONSerialization.dataWithJSONObject(value, options: [])
                 #endif
