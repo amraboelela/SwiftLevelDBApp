@@ -30,23 +30,24 @@ class BaseTestClass: XCTestCase {
         }
         BaseTestClass.db_i += 1
         db.removeAllObjects()
-        db.encoder = {(key: String, value: NSObject) -> Data? in
+        db.encoder = {(key: String, value: Any) -> Data? in
             do {
                 print("db.encoder key: \(key), value: \(value)")
                 let result = try JSONSerialization.data(withJSONObject: value)
-                print("db.encoder JSONSerialization.data result: \(result)")
+                print("db.encoder result: \(result.simpleDescription)")
                 return result
-            }
-            catch let error {
+            } catch let error {
                 print("Problem encoding data: \(error)")
                 return nil
             }
         }
-        db.decoder = {(key: String, data: Data) -> NSObject? in
+        db.decoder = {(key: String, data: Data) -> Any? in
             do {
-                return try JSONSerialization.jsonObject(with: data) as? NSObject
-            }
-            catch let error {
+                print("db.decoder data: \(data.simpleDescription)")
+                let result = try JSONSerialization.jsonObject(with: data) 
+                print("db.decoder result: \(result)") 
+                return result
+            } catch let error {
                 print("Problem decoding data: \(error)")
                 return nil
             }
