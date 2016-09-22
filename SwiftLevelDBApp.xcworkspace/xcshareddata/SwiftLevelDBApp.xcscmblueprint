@@ -10,8 +10,8 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "53554979-B5FB-4C47-B598-D5AA006C52F3",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "D8AE9B5952F6EFD0E6063DBD3DC6ABB711A1D308" : "CLevelDB\/",
-    "6D51C6D006043F4D4BC8BD502F056D391D4C7A56" : "SwiftLevelDB\/",
+    "D8AE9B5952F6EFD0E6063DBD3DC6ABB711A1D308" : "..\/rengo\/CLevelDB",
+    "6D51C6D006043F4D4BC8BD502F056D391D4C7A56" : "..\/rengo\/SwiftLevelDB",
     "D0F91159614D2A195BAD9D432542F57043B11A49" : "SwiftLevelDBApp\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftLevelDBApp",

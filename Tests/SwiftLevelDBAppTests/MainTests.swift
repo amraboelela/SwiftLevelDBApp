@@ -104,18 +104,10 @@ class MainTests: BaseTestClass {
             }
             db[numberKey] = ["price": price] 
         }
-        #if swift(>=3.0)
-            resultKeys = resultKeys.sorted{$0 < $1}
-        #else
-            resultKeys = resultKeys.sort{$0 < $1}
-        #endif
+        resultKeys = resultKeys.sorted{$0 < $1}
         XCTAssertEqual(db.keysByFilteringWithPredicate(predicate), resultKeys, "Filtering db keys with a predicate should return the same list as expected")
         var allObjects = db.dictionaryByFilteringWithPredicate(predicate)
-        #if swift(>=3.0)
             XCTAssertEqual(allObjects.keys.sorted{$0 < $1}, resultKeys, "A dictionary obtained by filtering with a predicate should yield the expected list of keys")
-        #else
-            XCTAssertEqual(allObjects.keys.sort{$0 < $1}, resultKeys, "A dictionary obtained by filtering with a predicate should yield the expected list of keys")
-        #endif
         var i = 0
         db.enumerateKeysWithPredicate(predicate, backward: false, startingAtKey: nil, andPrefix: nil, usingBlock: {key, stop in
             XCTAssertEqual(key, resultKeys[i], "Enumerating by filtering with a predicate should yield the expected keys")
@@ -146,7 +138,6 @@ class MainTests: BaseTestClass {
             return [[]]
         }
         var pairs = [[Any]]()
-        #if swift(>=3.0)
             for i in 0..<n {
             lvldb_test_queue.sync {
             var r: Int
@@ -165,24 +156,6 @@ class MainTests: BaseTestClass {
             let obj2 = $1[0] as! String
             return obj1 < obj2
             }
-        #else
-            dispatch_apply(n, lvldb_test_queue, {(i: size_t) -> Void in
-                var r: Int
-                var key: String
-                repeat {
-                    r = Int(arc4random_uniform(5000))
-                    key = "\(r)"
-                } while db.objectExistsForKey(key)
-                let value = [r, i]
-                pairs.append([key, value])
-                db[key] = value
-            })
-            pairs.sortInPlace{
-                let obj1 = $0[0] as! String
-                let obj2 = $1[0] as! String
-                return obj1 < obj2
-            }
-        #endif
         
         return pairs
     }
