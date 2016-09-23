@@ -52,7 +52,6 @@ class MainTests: BaseTestClass {
         XCTAssertEqual(db.allKeys(), [], "The list of keys should be empty after removing all objects from the database")
     }
 
-    /*
     func testRemovingKeysWithPrefix() {
         guard let db = db else {
             print("Database reference is not existent, failed to open / create database")
@@ -361,13 +360,13 @@ class MainTests: BaseTestClass {
             r -= 1
         })
         db.removeAllObjects()
-    }*/
+    }
 
     static var allTests : [(String, (MainTests) -> () throws -> Void)] {
         return [
             ("testDatabaseCreated", testDatabaseCreated),
             ("testContentIntegrity", testContentIntegrity),
-            /*("testKeysManipulation", testKeysManipulation),
+            ("testKeysManipulation", testKeysManipulation),
             ("testRemovingKeysWithPrefix", testRemovingKeysWithPrefix),
             ("testDictionaryManipulations", testDictionaryManipulations),
             ("testPredicateFiltering", testPredicateFiltering),
@@ -377,7 +376,7 @@ class MainTests: BaseTestClass {
             ("testPrefixedEnumerations", testPrefixedEnumerations),
             ("testForwardKeyAndValueEnumerations", testForwardKeyAndValueEnumerations),
             ("testBackwardKeyAndValueEnumerations", testBackwardKeyAndValueEnumerations),
-            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),*/
+            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),
         ]
     }
 }
