@@ -22,6 +22,10 @@ class MainTests: BaseTestClass {
     }
 
     func testContentIntegrity() {
+        guard let database = database else {
+            print("Database reference is not existent, failed to open / create database")
+            return
+        }
         let key = "dict1"
         let value1 = ["foo": "bar"] 
         database[key] = value1
@@ -84,10 +88,10 @@ class MainTests: BaseTestClass {
     }
     
     func testPredicateFiltering() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         let predicate = NSPredicate { (obj, bindings) -> Bool in
             let dic = obj as! [String: Int]
             let price = dic["price"]!
@@ -139,10 +143,10 @@ class MainTests: BaseTestClass {
     }
 
     func nPairs(_ n: Int) -> [[Any]] {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return [[]]
-        }*/
+        }
         var pairs = [[Any]]()
         for i in 0..<n {
             lvldb_test_queue.sync {
@@ -171,10 +175,10 @@ class MainTests: BaseTestClass {
     }
 
     func testForwardKeyEnumerations() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         var r: Int
         var pairs = self.nPairs(numberOfIterations)
         // Test that enumerating the whole set yields keys in the correct orders
@@ -196,10 +200,10 @@ class MainTests: BaseTestClass {
     }
 
     func testBackwardKeyEnumerations() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         var pairs = self.nPairs(numberOfIterations)
         // Test that enumerating the whole set backwards yields keys in the correct orders
         var r = pairs.count - 1
@@ -220,10 +224,10 @@ class MainTests: BaseTestClass {
     }
 
     func testBackwardPrefixedEnumerationsWithStartingKey() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         let valueFor = {(i: Int) -> [String : Int] in
                 return ["key" : i]
             }
@@ -239,10 +243,10 @@ class MainTests: BaseTestClass {
     }
 
     func testPrefixedEnumerations() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         let valueFor = {(i: Int) -> [String : Int] in
                 return ["key": i]
             }
@@ -286,10 +290,10 @@ class MainTests: BaseTestClass {
     }
 
     func testForwardKeyAndValueEnumerations() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         var pairs = self.nPairs(numberOfIterations)
         // Test that enumerating the whole set yields pairs in the correct orders
         var r = 0
@@ -314,10 +318,10 @@ class MainTests: BaseTestClass {
     }
 
     func testBackwardKeyAndValueEnumerations() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         var pairs = self.nPairs(numberOfIterations)
         // Test that enumerating the whole set backwards yields pairs in the correct orders
         var r = pairs.count - 1
@@ -342,10 +346,10 @@ class MainTests: BaseTestClass {
     }
 
     func testBackwardLazyKeyAndValueEnumerations() {
-        /*guard let database = database else {
+        guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }*/
+        }
         var pairs = self.nPairs(numberOfIterations)
         // Test that enumerating the set backwards and lazily at an offset yields pairs in the correct orders
         var r = 567;
@@ -363,7 +367,7 @@ class MainTests: BaseTestClass {
     static var allTests : [(String, (MainTests) -> () throws -> Void)] {
         return [
             ("testDatabaseCreated", testDatabaseCreated),
-            /*("testContentIntegrity", testContentIntegrity),
+            ("testContentIntegrity", testContentIntegrity),
             ("testKeysManipulation", testKeysManipulation),
             ("testRemovingKeysWithPrefix", testRemovingKeysWithPrefix),
             ("testDictionaryManipulations", testDictionaryManipulations),
@@ -374,7 +378,7 @@ class MainTests: BaseTestClass {
             ("testPrefixedEnumerations", testPrefixedEnumerations),
             ("testForwardKeyAndValueEnumerations", testForwardKeyAndValueEnumerations),
             ("testBackwardKeyAndValueEnumerations", testBackwardKeyAndValueEnumerations),
-            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),*/
+            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),
         ]
     }
 }

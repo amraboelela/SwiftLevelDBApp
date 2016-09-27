@@ -10,7 +10,6 @@
 		0C1FA5901D6FA5A200E036EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FA58F1D6FA5A200E036EE /* Info.plist */; };
 		0C68D3B51D99EF7B0089BA22 /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C68D3B41D99EF7B0089BA22 /* RengoFoundation.framework */; };
 		0C68D3B61D99EF8D0089BA22 /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0B47A31D99E2EE00B563A6 /* SwiftLevelDB.framework */; };
-		0C9BCDB01D6EA082004F32FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
 		0C9BCDBB1D6EA0CD004F32FE /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
 		0C9BCDBC1D6EA0D0004F32FE /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
 		0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */; };
@@ -18,6 +17,7 @@
 		0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD11D6F90E0004F32FE /* ViewController.swift */; };
 		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
 		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
+		0CA958B81D9A233A004CC8F9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,7 +224,6 @@
 				0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */,
 				0C9BCDD31D6F90E0004F32FE /* Assets.xcassets in Resources */,
 				0C1FA5901D6FA5A200E036EE /* Info.plist in Resources */,
-				0C9BCDB01D6EA082004F32FE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA958B81D9A233A004CC8F9 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
