@@ -16,7 +16,7 @@ import RengoFoundation
 class BaseTestClass: XCTestCase {
     
     var database : Database!
-    static var db_i = 0
+    //static var db_i = 0
     var lvldb_test_queue = DispatchQueue(label: "Create DB")
     
     override func setUp() {
@@ -27,9 +27,9 @@ class BaseTestClass: XCTestCase {
             print("Database reference is not existent, failed to open / create database")
             return
         }*/
-        BaseTestClass.db_i += 1
-        database = Database(name: "TestDB\(BaseTestClass.db_i)")
-        //database = Database()
+        //BaseTestClass.db_i += 1
+        //database = Database(name: "TestDB") //\(BaseTestClass.db_i)")
+        database = Database.database 
         database.removeAllObjects()
         /*database.encoder = {(key: String, value: Any) -> Data? in
             do {
@@ -54,7 +54,7 @@ class BaseTestClass: XCTestCase {
             print("Database reference is not existent, failed to open / create database")
             return
         }*/
-        database.close()
+        //database.close()
         //database.deleteDatabaseFromDisk()
         super.tearDown()
     }
