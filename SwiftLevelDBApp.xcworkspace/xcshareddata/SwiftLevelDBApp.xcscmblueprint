@@ -4,15 +4,17 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BA12F814F6397CE2E31870C99F2F0C15C5ED711F" : 9223372036854775807,
+    "D0F91159614D2A195BAD9D432542F57043B11A49" : 0,
     "D8AE9B5952F6EFD0E6063DBD3DC6ABB711A1D308" : 0,
-    "6D51C6D006043F4D4BC8BD502F056D391D4C7A56" : 0,
-    "D0F91159614D2A195BAD9D432542F57043B11A49" : 0
+    "6D51C6D006043F4D4BC8BD502F056D391D4C7A56" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "53554979-B5FB-4C47-B598-D5AA006C52F3",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BA12F814F6397CE2E31870C99F2F0C15C5ED711F" : "..\/rengo\/RengoFoundation",
+    "D0F91159614D2A195BAD9D432542F57043B11A49" : "SwiftLevelDBApp\/",
     "D8AE9B5952F6EFD0E6063DBD3DC6ABB711A1D308" : "..\/rengo\/CLevelDB",
-    "6D51C6D006043F4D4BC8BD502F056D391D4C7A56" : "..\/rengo\/SwiftLevelDB",
-    "D0F91159614D2A195BAD9D432542F57043B11A49" : "SwiftLevelDBApp\/"
+    "6D51C6D006043F4D4BC8BD502F056D391D4C7A56" : "..\/rengo\/SwiftLevelDB"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftLevelDBApp",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -22,6 +24,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amraboelela\/SwiftLevelDB.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6D51C6D006043F4D4BC8BD502F056D391D4C7A56"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amraboelela\/RengoFoundation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BA12F814F6397CE2E31870C99F2F0C15C5ED711F"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amraboelela\/SwiftLevelDBApp.git",

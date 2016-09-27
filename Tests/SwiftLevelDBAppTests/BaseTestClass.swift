@@ -9,51 +9,53 @@
 import XCTest
 import Foundation
 import Dispatch
-import SwiftLevelDB
+import RengoFoundation
 
-@testable import SwiftLevelDBApp
+@testable import RengoFoundation
 
 class BaseTestClass: XCTestCase {
     
-    var db : LevelDB?
+    var database : Database!
     static var db_i = 0
     var lvldb_test_queue = DispatchQueue(label: "Create DB")
     
     override func setUp() {
         super.setUp()
         
-        db = LevelDB.databaseInLibraryWithName("TestDB\(BaseTestClass.db_i)")
-        guard let db = db else {
+        //database = LevelDB.databaseInLibraryWithName("TestDB\(BaseTestClass.db_i)")
+        /*guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }
+        }*/
         BaseTestClass.db_i += 1
-        db.removeAllObjects()
-        db.encoder = {(key: String, value: Any) -> Data? in
+        database = Database(name: "TestDB\(BaseTestClass.db_i)")
+        //database = Database()
+        database.removeAllObjects()
+        /*database.encoder = {(key: String, value: Any) -> Data? in
             do {
                 return try JSONSerialization.data(withJSONObject: value)
-            } catch let error {
+            } catch {
                 print("Problem encoding data: \(error)")
                 return nil
             }
         }
-        db.decoder = {(key: String, data: Data) -> Any? in
+        database.decoder = {(key: String, data: Data) -> Any? in
             do {
                 return try JSONSerialization.jsonObject(with: data)
-            } catch let error {
+            } catch {
                 print("Problem decoding data: \(error)")
                 return nil
             }
-        }
+        }*/
     }
     
     override func tearDown() {
-        guard let db = db else {
+        /*guard let database = database else {
             print("Database reference is not existent, failed to open / create database")
             return
-        }
-        db.close()
-        db.deleteDatabaseFromDisk()
+        }*/
+        database.close()
+        //database.deleteDatabaseFromDisk()
         super.tearDown()
     }
 }
