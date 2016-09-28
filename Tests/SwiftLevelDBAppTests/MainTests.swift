@@ -367,7 +367,7 @@ class MainTests: BaseTestClass {
     static var allTests : [(String, (MainTests) -> () throws -> Void)] {
         return [
             ("testDatabaseCreated", testDatabaseCreated),
-            ("testContentIntegrity", testContentIntegrity),
+            /*("testContentIntegrity", testContentIntegrity),
             ("testKeysManipulation", testKeysManipulation),
             ("testRemovingKeysWithPrefix", testRemovingKeysWithPrefix),
             ("testDictionaryManipulations", testDictionaryManipulations),
@@ -378,7 +378,7 @@ class MainTests: BaseTestClass {
             ("testPrefixedEnumerations", testPrefixedEnumerations),
             ("testForwardKeyAndValueEnumerations", testForwardKeyAndValueEnumerations),
             ("testBackwardKeyAndValueEnumerations", testBackwardKeyAndValueEnumerations),
-            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),
+            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),*/
         ]
     }
 }
