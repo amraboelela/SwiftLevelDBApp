@@ -16,7 +16,7 @@
 		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
 		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
 		0CA958B81D9A233A004CC8F9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
-		0CDC2C811D9B41480027ED6B /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDC2C801D9B41480027ED6B /* RengoFoundation.framework */; };
+		0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		0C9BCDD11D6F90E0004F32FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SwiftLevelDBApp/ViewController.swift; sourceTree = "<group>"; };
 		0C9BCDD81D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C9BCDDA1D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0CDC2C801D9B41480027ED6B /* RengoFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RengoFoundation.framework; path = "../../rengo/RengoFoundation/build/Debug-iphoneos/RengoFoundation.framework"; sourceTree = "<group>"; };
+		0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RengoFoundation.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/RengoFoundation.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CDC2C811D9B41480027ED6B /* RengoFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 		0CF7F60B1D6D01E400725EFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0CDC2C801D9B41480027ED6B /* RengoFoundation.framework */,
+				0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
