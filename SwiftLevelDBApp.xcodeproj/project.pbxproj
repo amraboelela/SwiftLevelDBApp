@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0C1FA5901D6FA5A200E036EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FA58F1D6FA5A200E036EE /* Info.plist */; };
-		0C68D3B51D99EF7B0089BA22 /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C68D3B41D99EF7B0089BA22 /* RengoFoundation.framework */; };
-		0C68D3B61D99EF8D0089BA22 /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0B47A31D99E2EE00B563A6 /* SwiftLevelDB.framework */; };
 		0C9BCDBB1D6EA0CD004F32FE /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
 		0C9BCDBC1D6EA0D0004F32FE /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
 		0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */; };
@@ -18,6 +16,7 @@
 		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
 		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
 		0CA958B81D9A233A004CC8F9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
+		0CDC2C811D9B41480027ED6B /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDC2C801D9B41480027ED6B /* RengoFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,11 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C0B47A31D99E2EE00B563A6 /* SwiftLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/SwiftLevelDB.framework"; sourceTree = "<group>"; };
 		0C1FA58F1D6FA5A200E036EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftLevelDBApp/Info.plist; sourceTree = "<group>"; };
 		0C4F5EC01D6B72EA00BEE4AE /* SwiftLevelDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLevelDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLevelDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C68D3B41D99EF7B0089BA22 /* RengoFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RengoFoundation.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/RengoFoundation.framework"; sourceTree = "<group>"; };
 		0C9BCDAF1D6EA082004F32FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTestClass.swift; path = Tests/SwiftLevelDBAppTests/BaseTestClass.swift; sourceTree = "<group>"; };
 		0C9BCDB21D6EA097004F32FE /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTests.swift; path = Tests/SwiftLevelDBAppTests/MainTests.swift; sourceTree = "<group>"; };
@@ -46,6 +43,7 @@
 		0C9BCDD11D6F90E0004F32FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SwiftLevelDBApp/ViewController.swift; sourceTree = "<group>"; };
 		0C9BCDD81D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C9BCDDA1D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0CDC2C801D9B41480027ED6B /* RengoFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RengoFoundation.framework; path = "../../rengo/RengoFoundation/build/Debug-iphoneos/RengoFoundation.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CDC2C811D9B41480027ED6B /* RengoFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C68D3B61D99EF8D0089BA22 /* SwiftLevelDB.framework in Frameworks */,
-				0C68D3B51D99EF7B0089BA22 /* RengoFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +128,7 @@
 		0CF7F60B1D6D01E400725EFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0C68D3B41D99EF7B0089BA22 /* RengoFoundation.framework */,
-				0C0B47A31D99E2EE00B563A6 /* SwiftLevelDB.framework */,
+				0CDC2C801D9B41480027ED6B /* RengoFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
