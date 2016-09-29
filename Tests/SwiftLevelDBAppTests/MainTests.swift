@@ -378,7 +378,7 @@ class MainTests: BaseTestClass {
             ("testPrefixedEnumerations", testPrefixedEnumerations),
             ("testForwardKeyAndValueEnumerations", testForwardKeyAndValueEnumerations),
             ("testBackwardKeyAndValueEnumerations", testBackwardKeyAndValueEnumerations),
-            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations),
+            ("testBackwardLazyKeyAndValueEnumerations", testBackwardLazyKeyAndValueEnumerations), 
         ]
     }
 }
