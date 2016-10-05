@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C1FA5901D6FA5A200E036EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FA58F1D6FA5A200E036EE /* Info.plist */; };
 		0C9BCDBB1D6EA0CD004F32FE /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
 		0C9BCDBC1D6EA0D0004F32FE /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
 		0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */; };
@@ -15,7 +14,6 @@
 		0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD11D6F90E0004F32FE /* ViewController.swift */; };
 		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
 		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
-		0CA958B81D9A233A004CC8F9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
 		0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -178,7 +176,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Amr Aboelela";
 				TargetAttributes = {
 					0C4F5EBF1D6B72EA00BEE4AE = {
@@ -219,7 +217,6 @@
 				0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */,
 				0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */,
 				0C9BCDD31D6F90E0004F32FE /* Assets.xcassets in Resources */,
-				0C1FA5901D6FA5A200E036EE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CA958B81D9A233A004CC8F9 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,8 +292,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -342,8 +340,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -362,6 +362,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
