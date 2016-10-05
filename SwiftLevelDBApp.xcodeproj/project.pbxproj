@@ -12,7 +12,6 @@
 		0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD11D6F90E0004F32FE /* ViewController.swift */; };
 		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
 		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
-		0C9C3A8F1DA4BE39008491C7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDAF1D6EA082004F32FE /* Info.plist */; };
 		0C9C3A901DA4BE3E008491C7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FA58F1D6FA5A200E036EE /* Info.plist */; };
 		0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */; };
 /* End PBXBuildFile section */
@@ -28,10 +27,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0C75101DA5879200AC1413 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/SwiftLevelDBAppTests/Info.plist; sourceTree = "<group>"; };
 		0C1FA58F1D6FA5A200E036EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftLevelDBApp/Info.plist; sourceTree = "<group>"; };
 		0C4F5EC01D6B72EA00BEE4AE /* SwiftLevelDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLevelDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLevelDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C9BCDAF1D6EA082004F32FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTestClass.swift; path = Tests/SwiftLevelDBAppTests/BaseTestClass.swift; sourceTree = "<group>"; };
 		0C9BCDB21D6EA097004F32FE /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTests.swift; path = Tests/SwiftLevelDBAppTests/MainTests.swift; sourceTree = "<group>"; };
 		0C9BCDB91D6EA0BE004F32FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -88,7 +87,6 @@
 		0C9BCDA51D6EA011004F32FE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0C9BCDAF1D6EA082004F32FE /* Info.plist */,
 				0C9C3A8D1DA4BC5E008491C7 /* LinuxMain.swift */,
 				0C9BCDAE1D6EA03C004F32FE /* SwiftLevelDBAppTests */,
 			);
@@ -98,6 +96,7 @@
 		0C9BCDAE1D6EA03C004F32FE /* SwiftLevelDBAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C0C75101DA5879200AC1413 /* Info.plist */,
 				0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */,
 				0C9BCDB21D6EA097004F32FE /* MainTests.swift */,
 			);
@@ -227,7 +226,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9C3A8F1DA4BE39008491C7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +402,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/SwiftLevelDBApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amr.SwiftLevelDBAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,7 +416,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/SwiftLevelDBApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amr.SwiftLevelDBAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
