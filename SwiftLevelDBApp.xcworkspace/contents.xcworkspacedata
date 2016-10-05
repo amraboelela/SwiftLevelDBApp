@@ -5,12 +5,9 @@
       location = "group:SwiftLevelDBApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../../rengo/RengoFoundation/RengoFoundation.xcodeproj">
+      location = "group:../SwiftLevelDB/SwiftLevelDB.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../../rengo/SwiftLevelDB/SwiftLevelDB.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../../rengo/CLevelDB/CLevelDB.xcodeproj">
+      location = "group:../CLevelDB/CLevelDB.xcodeproj">
    </FileRef>
 </Workspace>

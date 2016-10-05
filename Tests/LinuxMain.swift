@@ -4,5 +4,4 @@ import XCTest
 
 XCTMain([
      testCase(MainTests.allTests),
-     testCase(RengoClientTests.allTests),
 ])
