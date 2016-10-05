@@ -64,14 +64,3 @@ class ClientApplication {
         CFRunLoopRun()
     }
 }
-
-/*
-public func ClientApplicationMain(deviceID: String, name: String, bio: String, latitude: Float, longitude: Float) {
-    //print("deviceID: \(deviceID), name: \(name), bio: \(bio), latitude: \(latitude), longitude: \(longitude)")
-    //DispatchQueue.global().async {
-        ClientApplication(deviceID: deviceID, name: name, bio: bio, latitude: latitude, longitude: longitude).run()
-    //}
-    //print("ClientApplicationMain currentThread \(Thread.current)")
-    //print("ClientApplicationMain CFRunLoopGetCurrent: \(CFRunLoopGetCurrent())")
-    //CFRunLoopRun()
-}*/

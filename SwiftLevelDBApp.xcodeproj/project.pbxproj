@@ -43,6 +43,7 @@
 		0C9BCDDA1D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C9C3A861DA4B48E008491C7 /* RengoClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RengoClientTests.swift; path = Tests/SwiftLevelDBAppTests/RengoClientTests.swift; sourceTree = "<group>"; };
 		0C9C3A891DA4B5D4008491C7 /* ClientApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientApplication.swift; path = Tests/SwiftLevelDBAppTests/ClientApplication.swift; sourceTree = "<group>"; };
+		0C9C3A8D1DA4BC5E008491C7 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RengoFoundation.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/RengoFoundation.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				0C9BCDAF1D6EA082004F32FE /* Info.plist */,
+				0C9C3A8D1DA4BC5E008491C7 /* LinuxMain.swift */,
 				0C9BCDAE1D6EA03C004F32FE /* SwiftLevelDBAppTests */,
 			);
 			name = Tests;
