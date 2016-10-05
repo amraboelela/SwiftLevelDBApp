@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C9BCDBB1D6EA0CD004F32FE /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
-		0C9BCDBC1D6EA0D0004F32FE /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
 		0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */; };
 		0C9BCDD31D6F90E0004F32FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCF1D6F90E0004F32FE /* Assets.xcassets */; };
 		0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD11D6F90E0004F32FE /* ViewController.swift */; };
 		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
 		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
+		0C9C3A8B1DA4B5D8008491C7 /* ClientApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C3A891DA4B5D4008491C7 /* ClientApplication.swift */; };
+		0C9C3A8C1DA4B775008491C7 /* RengoClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C3A861DA4B48E008491C7 /* RengoClientTests.swift */; };
 		0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +41,8 @@
 		0C9BCDD11D6F90E0004F32FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SwiftLevelDBApp/ViewController.swift; sourceTree = "<group>"; };
 		0C9BCDD81D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C9BCDDA1D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C9C3A861DA4B48E008491C7 /* RengoClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RengoClientTests.swift; path = Tests/SwiftLevelDBAppTests/RengoClientTests.swift; sourceTree = "<group>"; };
+		0C9C3A891DA4B5D4008491C7 /* ClientApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientApplication.swift; path = Tests/SwiftLevelDBAppTests/ClientApplication.swift; sourceTree = "<group>"; };
 		0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RengoFoundation.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/RengoFoundation.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,8 @@
 			children = (
 				0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */,
 				0C9BCDB21D6EA097004F32FE /* MainTests.swift */,
+				0C9C3A861DA4B48E008491C7 /* RengoClientTests.swift */,
+				0C9C3A891DA4B5D4008491C7 /* ClientApplication.swift */,
 			);
 			name = SwiftLevelDBAppTests;
 			sourceTree = "<group>";
@@ -243,8 +247,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9BCDBC1D6EA0D0004F32FE /* MainTests.swift in Sources */,
-				0C9BCDBB1D6EA0CD004F32FE /* BaseTestClass.swift in Sources */,
+				0C9C3A8B1DA4B5D8008491C7 /* ClientApplication.swift in Sources */,
+				0C9C3A8C1DA4B775008491C7 /* RengoClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
