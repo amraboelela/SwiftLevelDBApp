@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C0C75121DA5886600AC1413 /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
 		0C0C75131DA5886800AC1413 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
+		0C0C751C1DA58C1300AC1413 /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0C751B1DA58C1300AC1413 /* SwiftLevelDB.framework */; };
 		0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */; };
 		0C9BCDD31D6F90E0004F32FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCF1D6F90E0004F32FE /* Assets.xcassets */; };
 		0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD11D6F90E0004F32FE /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0C0C75101DA5879200AC1413 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/SwiftLevelDBAppTests/Info.plist; sourceTree = "<group>"; };
+		0C0C751B1DA58C1300AC1413 /* SwiftLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/SwiftLevelDB.framework"; sourceTree = "<group>"; };
 		0C1FA58F1D6FA5A200E036EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftLevelDBApp/Info.plist; sourceTree = "<group>"; };
 		0C4F5EC01D6B72EA00BEE4AE /* SwiftLevelDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLevelDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLevelDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0C751C1DA58C1300AC1413 /* SwiftLevelDB.framework in Frameworks */,
 				0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +132,7 @@
 		0CF7F60B1D6D01E400725EFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C0C751B1DA58C1300AC1413 /* SwiftLevelDB.framework */,
 				0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */,
 			);
 			name = Frameworks;
