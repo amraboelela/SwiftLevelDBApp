@@ -7,36 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C0C75121DA5886600AC1413 /* BaseTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */; };
-		0C0C75131DA5886800AC1413 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDB21D6EA097004F32FE /* MainTests.swift */; };
-		0C0C751C1DA58C1300AC1413 /* SwiftLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0C751B1DA58C1300AC1413 /* SwiftLevelDB.framework */; };
 		0C9BCDD21D6F90E0004F32FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */; };
 		0C9BCDD31D6F90E0004F32FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDCF1D6F90E0004F32FE /* Assets.xcassets */; };
 		0C9BCDD51D6F90E0004F32FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD11D6F90E0004F32FE /* ViewController.swift */; };
 		0C9BCDDB1D6F91BC004F32FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */; };
 		0C9BCDDC1D6F91BC004F32FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9BCDD91D6F91BC004F32FE /* Main.storyboard */; };
 		0C9C3A901DA4BE3E008491C7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FA58F1D6FA5A200E036EE /* Info.plist */; };
-		0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0C4F5ED51D6B72EA00BEE4AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C4F5EB81D6B72EA00BEE4AE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C4F5EBF1D6B72EA00BEE4AE;
-			remoteInfo = SwiftLevelDBApp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		0C0C75101DA5879200AC1413 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/SwiftLevelDBAppTests/Info.plist; sourceTree = "<group>"; };
 		0C0C751B1DA58C1300AC1413 /* SwiftLevelDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLevelDB.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/SwiftLevelDB.framework"; sourceTree = "<group>"; };
 		0C1FA58F1D6FA5A200E036EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftLevelDBApp/Info.plist; sourceTree = "<group>"; };
 		0C4F5EC01D6B72EA00BEE4AE /* SwiftLevelDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLevelDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLevelDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTestClass.swift; path = Tests/SwiftLevelDBAppTests/BaseTestClass.swift; sourceTree = "<group>"; };
-		0C9BCDB21D6EA097004F32FE /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTests.swift; path = Tests/SwiftLevelDBAppTests/MainTests.swift; sourceTree = "<group>"; };
 		0C9BCDB91D6EA0BE004F32FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C9BCDC51D6EA401004F32FE /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		0C9BCDCE1D6F90E0004F32FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SwiftLevelDBApp/AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +26,6 @@
 		0C9BCDD11D6F90E0004F32FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SwiftLevelDBApp/ViewController.swift; sourceTree = "<group>"; };
 		0C9BCDD81D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C9BCDDA1D6F91BC004F32FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftLevelDBApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0C9C3A8D1DA4BC5E008491C7 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		0CDC2C821D9B43F80027ED6B /* RengoFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RengoFoundation.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftLevelDBApp-dmwxybmvbpwetafvphywipbmoisn/Build/Products/Debug-iphonesimulator/RengoFoundation.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,15 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C4F5ED11D6B72EA00BEE4AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C0C751C1DA58C1300AC1413 /* SwiftLevelDB.framework in Frameworks */,
-				0CDC2C831D9B43F80027ED6B /* RengoFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +47,6 @@
 				0C9BCDB91D6EA0BE004F32FE /* README.md */,
 				0CF7F60B1D6D01E400725EFB /* Frameworks */,
 				0C9BCDCD1D6F90B9004F32FE /* SwiftLevelDBApp */,
-				0C9BCDA51D6EA011004F32FE /* Tests */,
 				0C4F5EC11D6B72EA00BEE4AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,28 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				0C4F5EC01D6B72EA00BEE4AE /* SwiftLevelDBApp.app */,
-				0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0C9BCDA51D6EA011004F32FE /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				0C9C3A8D1DA4BC5E008491C7 /* LinuxMain.swift */,
-				0C9BCDAE1D6EA03C004F32FE /* SwiftLevelDBAppTests */,
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
-		0C9BCDAE1D6EA03C004F32FE /* SwiftLevelDBAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				0C0C75101DA5879200AC1413 /* Info.plist */,
-				0C9BCDB11D6EA097004F32FE /* BaseTestClass.swift */,
-				0C9BCDB21D6EA097004F32FE /* MainTests.swift */,
-			);
-			name = SwiftLevelDBAppTests;
 			sourceTree = "<group>";
 		};
 		0C9BCDCD1D6F90B9004F32FE /* SwiftLevelDBApp */ = {
@@ -158,24 +109,6 @@
 			productReference = 0C4F5EC01D6B72EA00BEE4AE /* SwiftLevelDBApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C4F5ED31D6B72EA00BEE4AE /* SwiftLevelDBAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0C4F5EE01D6B72EA00BEE4AE /* Build configuration list for PBXNativeTarget "SwiftLevelDBAppTests" */;
-			buildPhases = (
-				0C4F5ED01D6B72EA00BEE4AE /* Sources */,
-				0C4F5ED11D6B72EA00BEE4AE /* Frameworks */,
-				0C4F5ED21D6B72EA00BEE4AE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0C4F5ED61D6B72EA00BEE4AE /* PBXTargetDependency */,
-			);
-			name = SwiftLevelDBAppTests;
-			productName = SwiftLevelDBAppTests;
-			productReference = 0C4F5ED41D6B72EA00BEE4AE /* SwiftLevelDBAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,11 +122,6 @@
 					0C4F5EBF1D6B72EA00BEE4AE = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
-					};
-					0C4F5ED31D6B72EA00BEE4AE = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
-						TestTargetID = 0C4F5EBF1D6B72EA00BEE4AE;
 					};
 				};
 			};
@@ -211,7 +139,6 @@
 			projectRoot = "";
 			targets = (
 				0C4F5EBF1D6B72EA00BEE4AE /* SwiftLevelDBApp */,
-				0C4F5ED31D6B72EA00BEE4AE /* SwiftLevelDBAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,13 +155,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C4F5ED21D6B72EA00BEE4AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -247,24 +167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C4F5ED01D6B72EA00BEE4AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C0C75131DA5886800AC1413 /* MainTests.swift in Sources */,
-				0C0C75121DA5886600AC1413 /* BaseTestClass.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0C4F5ED61D6B72EA00BEE4AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0C4F5EBF1D6B72EA00BEE4AE /* SwiftLevelDBApp */;
-			targetProxy = 0C4F5ED51D6B72EA00BEE4AE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0C9BCDD71D6F91BC004F32FE /* LaunchScreen.storyboard */ = {
@@ -405,34 +308,6 @@
 			};
 			name = Release;
 		};
-		0C4F5EE11D6B72EA00BEE4AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Tests/SwiftLevelDBAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amr.SwiftLevelDBAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftLevelDBApp.app/SwiftLevelDBApp";
-			};
-			name = Debug;
-		};
-		0C4F5EE21D6B72EA00BEE4AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Tests/SwiftLevelDBAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amr.SwiftLevelDBAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftLevelDBApp.app/SwiftLevelDBApp";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -450,15 +325,6 @@
 			buildConfigurations = (
 				0C4F5EDE1D6B72EA00BEE4AE /* Debug */,
 				0C4F5EDF1D6B72EA00BEE4AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0C4F5EE01D6B72EA00BEE4AE /* Build configuration list for PBXNativeTarget "SwiftLevelDBAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0C4F5EE11D6B72EA00BEE4AE /* Debug */,
-				0C4F5EE21D6B72EA00BEE4AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
